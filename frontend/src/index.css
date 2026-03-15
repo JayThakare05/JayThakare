@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-black text-white font-sans antialiased;
+  }
+
+  h1, h2, h3, .font-display-base {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl;
+  }
+  
+  .silver-text {
+    background-image: linear-gradient(to bottom, #ffffff, theme('colors.silver-base'), theme('colors.silver-dark'));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    @apply italic font-extrabold;
+  }
+  
+  .silver-outline {
+    @apply border border-white/20 hover:border-white/40 transition-all duration-300 rounded-full;
+  }
+}
+
+.hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.8) 80%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
