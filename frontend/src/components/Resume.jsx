@@ -9,6 +9,7 @@ import {
   SiMysql, SiSqlite, SiFastapi, SiStreamlit, SiLangchain, SiGooglecolab
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
+
 export default function Resume() {
   const primarySkills = [
     {
@@ -50,19 +51,14 @@ export default function Resume() {
       skills: [
         { name: "MySQL", icon: <SiMysql className="text-[#4479A1]" /> },
         { name: "MongoDB", icon: <SiMongodb className="text-[#47A248]" /> },
-        // { name: "SQLite", icon: <SiSqlite className="text-[#003B57]" /> }
       ]
     },
     {
       title: "Tools & Tech",
       skills: [
-        { name: "Git & GitHub", icon: <FaGithub className="text-white" /> },
-        { name: "Vs Code ", icon: <VscVscode className="text-white" /> },
-        { name: "Google Colab", icon: <SiGooglecolab className="text-white" /> },
-        //{ name: "REST APIs", icon: <FaCogs className="text-silver-muted" /> },
-        //{ name: "Streamlit", icon: <SiStreamlit className="text-[#FF4B4B]" /> },
-        //{ name: "FastAPI", icon: <SiFastapi className="text-[#05998B]" /> },
-        //{ name: "Cloud Deployment", icon: <FaCloud className="text-[#232F3E]" /> }
+        { name: "Git & GitHub", icon: <FaGithub className="text-[#f0f6fc]" /> },
+        { name: "Vs Code ", icon: <VscVscode className="text-[#007ACC]" /> },
+        { name: "Google Colab", icon: <SiGooglecolab className="text-[#F9AB00]" /> },
       ]
     },
     {
@@ -80,33 +76,34 @@ export default function Resume() {
   ];
 
   return (
-    <section id="resume" className="py-32 bg-black relative overflow-hidden">
+    <section id="resume" className="py-20 md:py-32 bg-black relative overflow-hidden">
       {/* Subtle Background Mark */}
       <div className="absolute -top-24 -right-24 w-96 h-96 bg-silver-base/5 rounded-full blur-[100px] pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10">
-        <div className="mb-24">
-          <h2 className="text-white text-4xl font-display font-bold tracking-widest border-b border-white/10 pb-4 inline-block mb-6 uppercase">
+      <div className="max-w-7xl mx-auto px-5 md:px-12 w-full relative z-10">
+        <div className="mb-12 md:mb-24">
+          <h2 className="text-white text-3xl md:text-4xl font-display font-bold tracking-widest border-b border-white/10 pb-4 inline-block mb-4 md:mb-6 uppercase">
             Tech <span className="silver-text italic">Stack</span>
           </h2>
           <p className="text-silver-muted text-xs tracking-[0.5em] uppercase font-bold pl-1">Engineering Excellence</p>
         </div>
 
-        {/* Primary Categories */}
-        <div className="grid md:grid-cols-3 gap-16 md:gap-24 mb-32">
+        {/* Primary Categories — 1 col on mobile, 3 on desktop */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-24 mb-16 md:mb-32">
           {primarySkills.map((category, idx) => (
             <div key={idx} className="group">
-              <h3 className="text-white text-[11px] tracking-[0.4em] font-bold uppercase mb-12 border-b border-white/10 pb-2 inline-block group-hover:border-silver-base transition-all duration-500">
+              <h3 className="text-white text-[11px] tracking-[0.4em] font-bold uppercase mb-8 md:mb-12 border-b border-white/10 pb-2 inline-block group-hover:border-silver-base transition-all duration-500">
                 {category.title}
               </h3>
-              <div className="space-y-8">
+              <div className="space-y-6 md:space-y-8">
                 {category.skills.map((skill, index) => (
                   <motion.div
                     key={index}
                     whileHover={{ x: 10 }}
                     className="flex items-center gap-5 group/item"
                   >
-                    <div className="text-2xl filter grayscale opacity-40 group-hover/item:opacity-100 group-hover/item:grayscale-0 transition-all duration-500">
+                    {/* Mobile: full color. Desktop: grayscale → color on hover */}
+                    <div className="text-2xl md:filter md:grayscale md:opacity-40 md:group-hover/item:opacity-100 md:group-hover/item:grayscale-0 transition-all duration-500">
                       {skill.icon}
                     </div>
                     <span className="text-silver-muted text-[12px] tracking-[0.1em] uppercase group-hover/item:text-white transition-colors">
@@ -119,15 +116,15 @@ export default function Resume() {
           ))}
         </div>
 
-        {/* Marquee Enhancement */}
-        <div className="relative py-24 border-y border-white/5 bg-white/[0.01] -mx-12 px-12 mb-32 overflow-hidden">
+        {/* Marquee — horizontal scroll strip */}
+        <div className="relative py-10 md:py-24 border-y border-white/5 bg-white/[0.01] -mx-5 md:-mx-12 px-5 md:px-12 mb-16 md:mb-32 overflow-hidden">
           <motion.div
-            className="flex gap-24 whitespace-nowrap w-max"
+            className="flex gap-12 md:gap-24 whitespace-nowrap w-max"
             animate={{ x: ["0%", "-50%"] }}
             transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
           >
             {[...marqueeSkills, ...marqueeSkills].map((skill, i) => (
-              <span key={i} className="text-silver-muted/20 text-5xl md:text-7xl font-display font-black uppercase hover:text-silver-base transition-all duration-700 cursor-default px-4">
+              <span key={i} className="text-silver-muted/20 text-4xl md:text-7xl font-display font-black uppercase hover:text-silver-base transition-all duration-700 cursor-default px-4">
                 {skill}
               </span>
             ))}
@@ -135,10 +132,10 @@ export default function Resume() {
         </div>
 
         {/* Secondary Categories */}
-        <div className="grid md:grid-cols-3 gap-16 md:gap-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-24">
           {secondarySkills.map((category, idx) => (
             <div key={idx} className="group">
-              <h3 className="text-white text-[11px] tracking-[0.4em] font-bold uppercase mb-12 border-b border-white/10 pb-2 inline-block group-hover:border-silver-base transition-all duration-500">
+              <h3 className="text-white text-[11px] tracking-[0.4em] font-bold uppercase mb-8 md:mb-12 border-b border-white/10 pb-2 inline-block group-hover:border-silver-base transition-all duration-500">
                 {category.title}
               </h3>
               <div className="space-y-6">
@@ -148,7 +145,8 @@ export default function Resume() {
                     whileHover={{ x: 5 }}
                     className="flex items-center gap-4 group/item"
                   >
-                    <div className="text-xl opacity-20 filter grayscale group-hover/item:opacity-80 group-hover/item:grayscale-0 transition-all duration-500">
+                    {/* Mobile: full color. Desktop: grayscale → color on hover */}
+                    <div className="text-xl md:opacity-20 md:filter md:grayscale md:group-hover/item:opacity-80 md:group-hover/item:grayscale-0 transition-all duration-500">
                       {skill.icon}
                     </div>
                     <span className="text-silver-muted text-[12px] tracking-[0.1em] uppercase font-display group-hover/item:text-white transition-colors cursor-default">
@@ -164,5 +162,3 @@ export default function Resume() {
     </section>
   );
 }
-
-

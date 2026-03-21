@@ -1,0 +1,88 @@
+[
+  {
+    "id": 1,
+    "icon": "graduation",
+    "category": "Education",
+    "title": "B.E. in CSE (AIML)",
+    "subtitle": "Mumbai University",
+    "highlight": "CGPA: 9.0",
+    "details": [
+      "A. P. Shah Institute of Technology",
+      "Artificial Intelligence & Machine Learning",
+      "Current CGPA: 9.0",
+      "Department of Computer Engineering"
+    ],
+    "date": "2023 - PRESENT",
+    "url": null
+  },
+  {
+    "id": 2,
+    "icon": "certificate",
+    "category": "Cisco Academy",
+    "title": "CCNA: Introduction to Networks",
+    "subtitle": "Cisco Networking Academy",
+    "details": [
+      "Foundational Networking Concepts",
+      "Network Protocols & Infrastructure",
+      "Routing and Switching Essentials"
+    ],
+    "date": "2024",
+    "url": "https://res.cloudinary.com/dbv0toshr/image/upload/v1774078334/CCNA-_Introduction_to_Networks_certificate_23106052-apsit-edu-in_58144ee1-f1ee-4f47-ba49-21ffb6e97460_page-0001_v5kuki.jpg"
+  },
+  {
+    "id": 3,
+    "icon": "certificate",
+    "category": "Cisco Academy",
+    "title": "Programming Essentials in C",
+    "subtitle": "Cisco Networking Academy",
+    "details": [
+      "Fundamentals of C Programming",
+      "Problem-Solving & Logic Building",
+      "Memory Management & Pointers"
+    ],
+    "date": "2024",
+    "url": "https://res.cloudinary.com/dbv0toshr/image/upload/v1774078334/Partner-_CLA_-_Programming_Essentials_in_C_certificate_thakarejay2005-gmail-com_8d251bb4-e650-4bd7-a81c-d64eb07d0993_page-0001_fntroc.jpg"
+  },
+  {
+    "id": 4,
+    "icon": "certificate",
+    "category": "Full Stack",
+    "title": "Delta - Web Development",
+    "subtitle": "Apna College",
+    "details": [
+      "End-to-end Web Development",
+      "Modern Technologies & Frameworks",
+      "Project-Based Learning Experience"
+    ],
+    "date": "2024",
+    "url": "https://res.cloudinary.com/dbv0toshr/image/upload/v1774078334/apna_clg_wyxlzh.jpg"
+  },
+  {
+    "id": 5,
+    "icon": "certificate",
+    "category": "Oracle Academy",
+    "title": "Database Foundations",
+    "subtitle": "Oracle Academy",
+    "details": [
+      "Database Design & Concepts",
+      "SQL Queries & Data Management",
+      "Relational Database Principles"
+    ],
+    "date": "2024",
+    "url": "https://res.cloudinary.com/dbv0toshr/image/upload/v1774078334/dbms_lgsaft.jpg"
+  },
+  {
+    "id": 6,
+    "icon": "leetcode",
+    "category": "Competitive",
+    "title": "LeetCode Problem Solver",
+    "subtitle": "Competitive Programming",
+    "details": [
+      "Algorithmic Thinking Excellence",
+      "Advanced Data Structures",
+      "Daily Problem Solving Grit"
+    ],
+    "date": "Active",
+    "url": "https://leetcode.com/u/Jay_Thakare/"
+  }
+]

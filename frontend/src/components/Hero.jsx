@@ -52,18 +52,19 @@ export default function Hero() {
       <div className="absolute inset-0 z-10 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
       <div className="absolute inset-0 z-10 bg-gradient-to-r from-black via-black/60 to-transparent"></div>
 
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-start gap-8">
-        <div className="flex flex-col items-start">
-          <TypewriterText 
-            text="Hii, I'm" 
-            className="text-white font-display font-black text-4xl md:text-6xl uppercase mb-4"
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-5 md:px-12 flex flex-col items-start gap-6 md:gap-8 pt-16 md:pt-0">
+        <div className="flex flex-col items-start w-full">
+          <TypewriterText
+            text="Hii, I'm"
+            className="text-white font-display font-black text-3xl md:text-6xl uppercase mb-3 md:mb-4"
             delay={hiDelay}
           />
 
-          <div className="flex flex-col items-center">
-            <div className="text-6xl md:text-[8.5rem] font-display font-black leading-[0.8] tracking-tight mb-8 text-white uppercase text-left w-full translate-x-[-4px]">
+          <div className="flex flex-col items-start w-full">
+            {/* Name — scales gracefully on mobile */}
+            <div className="text-[3.2rem] leading-[0.9] sm:text-6xl md:text-[8.5rem] md:leading-[0.8] font-display font-black tracking-tight mb-6 md:mb-8 text-white uppercase text-left w-full">
               <TypewriterText text="Jay" speed={0.08} delay={jayDelay} />
-              <div className="silver-text pr-8 inline-block italic">
+              <div className="silver-text inline-block italic">
                 <TypewriterText text="Thakare" speed={0.08} delay={thakareDelay} />
               </div>
             </div>
@@ -73,7 +74,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: socialsDelay, duration: 0.8 }}
-              className="flex gap-10 items-center justify-center w-full mt-2"
+              className="flex gap-6 md:gap-10 items-center justify-start w-full mt-1 md:mt-2"
             >
               {socials.map((social, index) => (
                 <a
@@ -81,7 +82,7 @@ export default function Hero() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-silver-muted text-4xl md:text-5xl hover:text-white hover:scale-125 transition-all duration-300 ease-out"
+                  className="text-silver-muted text-3xl md:text-5xl hover:text-white hover:scale-125 transition-all duration-300 ease-out"
                 >
                   {social.icon}
                 </a>
@@ -90,29 +91,29 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="max-w-4xl space-y-10">
-          <TypewriterText 
+        <div className="w-full max-w-2xl space-y-6 md:space-y-10">
+          <TypewriterText
             text="Full Stack Web Developer | AI & Machine Learning Enthusiast"
-            className="text-silver-muted text-lg md:text-xl font-medium max-w-2xl leading-relaxed"
+            className="text-silver-muted text-sm md:text-xl font-medium leading-relaxed"
             delay={taglineDelay}
             speed={0.03}
           />
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: buttonDelay, duration: 0.8 }}
-            className="flex flex-wrap gap-8 items-center"
+            className="flex flex-wrap gap-4 md:gap-8 items-center"
           >
             <a
               href="#about"
-              className="silver-outline px-12 py-5 text-[10px] font-bold tracking-[0.2em] uppercase text-white hover:bg-white hover:text-black transition-all"
+              className="silver-outline px-8 md:px-12 py-4 md:py-5 text-[10px] font-bold tracking-[0.2em] uppercase text-white hover:bg-white hover:text-black transition-all"
             >
               Explore More
             </a>
             <div className="hidden md:flex items-center gap-6 border-l border-white/10 pl-8">
               <div className="w-12 h-[1px] bg-white/20"></div>
-              <p className="text-silver-muted text-[10px] tracking-[0.4em] uppercase">Building scalable & intelligent systems</p>
+              <p className="text-silver-muted text-[10px] tracking-[0.4em] uppercase">Building scalable &amp; intelligent systems</p>
             </div>
           </motion.div>
         </div>
@@ -120,7 +121,3 @@ export default function Hero() {
     </section>
   );
 }
-
-
-
-

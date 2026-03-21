@@ -20,6 +20,15 @@ export default {
         sans: ['Inter', 'sans-serif'],
         display: ['Outfit', 'sans-serif'],
       },
+      keyframes: {
+        'gradient-x': {
+          '0%, 100%': { 'background-size': '200% 200%', 'background-position': 'left center' },
+          '50%': { 'background-size': '200% 200%', 'background-position': 'right center' },
+        },
+      },
+      animation: {
+        'gradient-x': 'gradient-x 3s ease infinite',
+      },
       backgroundImage: {
         'glass-gradient': 'linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%)',
       },

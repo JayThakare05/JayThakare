@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "StayVista",
+    "subtitle": "Full-Stack Property Rental Platform",
+    "desc": "StayVista is a premium property rental platform inspired by Airbnb. It enables users to discover, explore, and book unique rental properties, while also allowing hosts to list and manage their own properties with ease. The platform features secure user authentication, dynamic listing management with cloud-based image storage, interactive location maps, and a robust review/rating system to ensure a seamless and trustworthy booking experience.",
+    "image": "https://res.cloudinary.com/dbv0toshr/image/upload/v1774079549/Stayvista_qxb2v9.png",
+    "url": "https://airbnb-zpic.onrender.com/listings",
+    "category": "Full Stack Development"
+  },
+  {
+    "id": 2,
+    "title": "DataIntel",
+    "subtitle": "AI-Powered Data Analysis Platform",
+    "desc": "DataIntel is an AI-driven platform that simplifies complex data analysis by allowing users to interact with their datasets using natural language. Instead of writing SQL queries or formulas, users can simply upload CSV files and ask questions in plain English. The system intelligently converts these queries into SQL, executes them against a structured database, generates insightful visualizations, and provides AI-driven business reports that can be exported as PDFs.",
+    "image": "https://res.cloudinary.com/dbv0toshr/image/upload/v1774079548/AutoCareerAI_vy5wmt.png",
+    "url": "http://data-intel.vercel.app/",
+    "category": "AI & Data Science"
+  },
+  {
+    "id": 3,
+    "title": "Auto Career AI",
+    "subtitle": "Intelligent AI Career Assistant",
+    "desc": "Auto Career AI is a sophisticated AI-powered career support platform designed to help users optimize their resumes and discover job opportunities. By utilizing OCR and advanced AI, the platform analyzes uploaded resumes and certificates to extract skills and evaluate ATS compatibility. It identifies skill gaps, generates professional career summaries, recommends tailored job listings, and even includes an AI career coach that suggests project improvements and guidance based on user goals.",
+    "image": "https://res.cloudinary.com/dbv0toshr/image/upload/v1774079548/AutoCareerAI_vy5wmt.png",
+    "url": "https://auto-career-ai.vercel.app/",
+    "category": "Generative AI"
+  }
+  
+]
