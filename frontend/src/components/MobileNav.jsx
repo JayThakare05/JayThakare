@@ -47,7 +47,7 @@ export default function MobileNav() {
   }, [getActiveSection]);
 
   return (
-    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-xl border-t border-white/10">
+    <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-xl border-t border-white/10">
       <div className="flex items-center justify-around px-1 py-2">
         {navItems.map((item) => {
           const isActive = activeSection === item.sectionId;

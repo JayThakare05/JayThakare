@@ -13,8 +13,8 @@ export default function Navbar() {
         </div>
       </a>
 
-      {/* Full nav — desktop only */}
-      <nav className="hidden md:flex fixed w-full z-50 top-0 left-0 px-6 py-4 md:px-12 md:py-6 justify-between items-center pointer-events-none">
+      {/* Full nav — desktop only (1024px+) */}
+      <nav className="hidden lg:flex fixed w-full z-50 top-0 left-0 px-6 py-4 md:px-12 md:py-6 justify-between items-center pointer-events-none">
         {/* Spacer to push links past the logo */}
         <div className="flex items-center gap-8">
           {/* Logo placeholder — actual logo rendered above */}

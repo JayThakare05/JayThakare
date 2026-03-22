@@ -101,8 +101,8 @@ export default function Resume() {
                     whileHover={{ x: 10 }}
                     className="flex items-center gap-5 group/item"
                   >
-                    {/* Mobile: full color. Desktop: grayscale → color on hover */}
-                    <div className="text-2xl md:filter md:grayscale md:opacity-40 md:group-hover/item:opacity-100 md:group-hover/item:grayscale-0 transition-all duration-500">
+                    {/* Mobile/Tablet: full color. Desktop: grayscale → color on hover */}
+                    <div className="text-2xl lg:filter lg:grayscale lg:opacity-40 lg:group-hover/item:opacity-100 lg:group-hover/item:grayscale-0 transition-all duration-500">
                       {skill.icon}
                     </div>
                     <span className="text-silver-muted text-[12px] tracking-[0.1em] uppercase group-hover/item:text-white transition-colors">
@@ -144,8 +144,8 @@ export default function Resume() {
                     whileHover={{ x: 5 }}
                     className="flex items-center gap-4 group/item"
                   >
-                    {/* Mobile: full color. Desktop: grayscale → color on hover */}
-                    <div className="text-xl md:opacity-20 md:filter md:grayscale md:group-hover/item:opacity-80 md:group-hover/item:grayscale-0 transition-all duration-500">
+                    {/* Mobile/Tablet: full color. Desktop: grayscale → color on hover */}
+                    <div className="text-xl lg:opacity-20 lg:filter lg:grayscale lg:group-hover/item:opacity-80 lg:group-hover/item:grayscale-0 transition-all duration-500">
                       {skill.icon}
                     </div>
                     <span className="text-silver-muted text-[12px] tracking-[0.1em] uppercase font-display group-hover/item:text-white transition-colors cursor-default">

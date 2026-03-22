@@ -62,7 +62,7 @@ export default function Hero() {
 
           <div className="flex flex-col items-start w-full">
             {/* Name — scales gracefully on mobile */}
-            <div className="text-[3.2rem] leading-[0.9] sm:text-6xl md:text-[6.5rem] lg:text-[7.5rem] xl:text-[8.5rem] md:leading-[0.8] font-display font-black tracking-tight mb-6 md:mb-8 text-white uppercase text-left w-full">
+            <div className="text-[3.2rem] leading-[0.9] sm:text-[4.5rem] md:text-[5.5rem] lg:text-[7rem] xl:text-[8.5rem] md:leading-[0.8] font-display font-black tracking-tight mb-6 md:mb-8 text-white uppercase text-left w-full">
               <TypewriterText text="Jay" speed={0.08} delay={jayDelay} />
               <div className="silver-text inline-block italic">
                 <TypewriterText text="Thakare" speed={0.08} delay={thakareDelay} />

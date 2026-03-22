@@ -38,11 +38,11 @@ export default function Projects() {
             >
               {/* Image Container */}
               <div className="relative aspect-[16/9] overflow-hidden rounded-sm border border-white/10 mb-6 md:mb-10 bg-neutral-900 shadow-2xl">
-                {/* Mobile: always full color */}
+                {/* Mobile/Tablet: always full color */}
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover md:hidden"
+                  className="w-full h-full object-cover lg:hidden"
                 />
                 {/* Desktop: grayscale → color on hover */}
                 <motion.img
@@ -54,21 +54,21 @@ export default function Projects() {
                   transition={{ duration: 0.7, ease: "easeOut" }}
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover hidden md:block"
+                  className="w-full h-full object-cover hidden lg:block"
                 />
 
                 {/* External Link Overlay — desktop hover only */}
                 <motion.div
                   animate={{ opacity: hoveredIndex === index ? 1 : 0 }}
-                  className="absolute top-4 right-4 md:top-6 md:right-6 hidden md:block"
+                  className="absolute top-4 right-4 lg:top-6 lg:right-6 hidden lg:block"
                 >
                   <div className="bg-black/60 backdrop-blur-md p-3 rounded-full border border-white/20">
                     <FaExternalLinkAlt className="text-white text-sm" />
                   </div>
                 </motion.div>
 
-                {/* Mobile: always-visible link icon */}
-                <div className="absolute top-4 right-4 md:hidden">
+                {/* Mobile/Tablet: always-visible link icon */}
+                <div className="absolute top-4 right-4 lg:hidden">
                   <div className="bg-black/50 backdrop-blur-md p-2.5 rounded-full border border-white/20">
                     <FaExternalLinkAlt className="text-white text-xs" />
                   </div>
@@ -94,9 +94,9 @@ export default function Projects() {
                   </p>
                 </div>
 
-                {/* Description — always shows on mobile (no hover on touch), animated on desktop */}
-                <div className="mt-3 md:mt-0">
-                  <p className="text-silver-muted text-sm leading-relaxed tracking-wide pt-3 md:pt-0 md:hidden border-t border-white/5 font-sans">
+                {/* Description — always shows on mobile/tablet (no hover on touch), animated on desktop */}
+                <div className="mt-3 lg:mt-0">
+                  <p className="text-silver-muted text-sm leading-relaxed tracking-wide pt-3 lg:pt-0 lg:hidden border-t border-white/5 font-sans">
                     {project.desc}
                   </p>
                   <AnimatePresence>
@@ -106,7 +106,7 @@ export default function Projects() {
                         animate={{ height: "auto", opacity: 1, marginTop: 16 }}
                         exit={{ height: 0, opacity: 0, marginTop: 0 }}
                         transition={{ duration: 0.4, ease: "easeInOut" }}
-                        className="overflow-hidden hidden md:block"
+                        className="overflow-hidden hidden lg:block"
                       >
                         <p className="text-silver-muted text-sm leading-relaxed tracking-wide pt-4 border-t border-white/5 font-sans">
                           {project.desc}

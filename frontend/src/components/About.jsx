@@ -36,22 +36,21 @@ export default function About() {
       </div>
 
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 md:gap-24 px-5 md:px-12 items-center relative z-10">
-
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="order-2 lg:order-1"
+           variants={containerVariants}
+           initial="hidden"
+           whileInView="visible"
+           viewport={{ once: true, margin: "-100px" }}
+           className="order-2 lg:order-1"
         >
           <motion.h2
             variants={itemVariants}
-            className="text-white text-2xl md:text-3xl font-display font-bold tracking-widest border-b border-white/10 pb-2 inline-block mb-8 md:mb-12"
+            className="text-white text-2xl md:text-4xl font-display font-bold tracking-widest border-b border-white/10 pb-2 inline-block mb-8 md:mb-12"
           >
             ABOUT ME
           </motion.h2>
 
-          <div className="space-y-5 md:space-y-8">
+          <div className="space-y-6 md:space-y-8">
             <motion.p
               variants={itemVariants}
               className="text-white text-xl md:text-3xl font-display font-medium leading-tight"
@@ -74,24 +73,26 @@ export default function About() {
 
           <motion.div
             variants={itemVariants}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mt-10 md:mt-16 pt-6 md:pt-8 border-t border-white/5 items-center"
+            className="flex flex-col sm:flex-row flex-wrap items-center justify-between gap-8 md:gap-12 mt-10 md:mt-16 pt-6 md:pt-8 border-t border-white/5"
           >
-            {stats.map((stat, index) => (
-              <div key={index} className="group cursor-default">
-                <p className="text-[9px] tracking-[0.3em] uppercase text-silver-muted mb-2 group-hover:text-white transition-colors">
-                  {stat.label}
-                </p>
-                <p className="text-lg md:text-xl font-display font-bold text-white uppercase italic">
-                  {stat.value}
-                </p>
-              </div>
-            ))}
+            <div className="flex gap-10 md:gap-16">
+              {stats.map((stat, index) => (
+                <div key={index} className="group cursor-default">
+                  <p className="text-[9px] tracking-[0.3em] uppercase text-silver-muted mb-2 group-hover:text-white transition-colors">
+                    {stat.label}
+                  </p>
+                  <p className="text-lg md:text-xl font-display font-bold text-white uppercase italic">
+                    {stat.value}
+                  </p>
+                </div>
+              ))}
+            </div>
 
-            <div className="col-span-2 md:col-span-2 flex justify-start md:justify-end mt-4 md:mt-0">
+            <div className="w-full sm:w-auto flex justify-center lg:justify-end">
               <a
                 href="/resume/RESUME.pdf"
                 download="Jay_Thakare_Resume.pdf"
-                className="px-10 py-4 bg-silver-base rounded-[1.5rem] text-black font-display font-black text-[12px] tracking-[0.3em] uppercase transition-all duration-300 hover:bg-white hover:scale-105 shadow-xl text-center block w-full sm:w-auto"
+                className="px-8 md:px-10 py-4 bg-silver-base rounded-[1.5rem] text-black font-display font-black text-[12px] tracking-[0.3em] uppercase transition-all duration-300 hover:bg-white hover:scale-105 shadow-xl text-center block"
               >
                 GET RESUME
               </a>
