@@ -111,16 +111,22 @@ export default function About() {
           <div className="absolute top-0 left-0 w-10 h-10 md:w-12 md:h-12 border-l border-t border-white/20 -mt-3 -ml-3 group-hover:border-white/50 transition-all duration-500"></div>
           <div className="absolute bottom-0 right-0 w-10 h-10 md:w-12 md:h-12 border-r border-b border-white/20 -mb-3 -mr-3 group-hover:border-white/50 transition-all duration-500"></div>
 
-          <div className="relative z-10 overflow-hidden rounded-sm border border-white/5">
+          <motion.div 
+            initial={{ filter: "grayscale(100%)", brightness: 0.9 }}
+            whileInView={{ filter: "grayscale(0%)", brightness: 1 }}
+            viewport={{ once: false, amount: 0.4 }}
+            transition={{ duration: 2, ease: "easeInOut" }}
+            className="relative z-10 overflow-hidden rounded-sm border border-white/5"
+          >
             <motion.img
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               src="https://res.cloudinary.com/dbv0toshr/image/upload/v1774079549/me_zuz1f3.png"
               alt="Jay Thakare"
-              className="w-full aspect-[4/5] object-cover filter grayscale group-hover:grayscale-0 transition-all duration-1000 contrast-110 brightness-90 group-hover:brightness-100"
+              className="w-full aspect-[4/5] object-cover contrast-110 shadow-2xl"
             />
             <div className="absolute inset-0 bg-gradient-to-tr from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-          </div>
+          </motion.div>
 
           <div className="absolute -bottom-8 -left-8 md:-bottom-12 md:-left-12 opacity-10 pointer-events-none select-none">
             <p className="text-[5rem] md:text-[8rem] font-display font-black text-white leading-none">J.T</p>
