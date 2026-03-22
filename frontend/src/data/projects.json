@@ -13,7 +13,7 @@
     "title": "DataIntel",
     "subtitle": "AI-Powered Data Analysis Platform",
     "desc": "DataIntel is an AI-driven platform that simplifies complex data analysis by allowing users to interact with their datasets using natural language. Instead of writing SQL queries or formulas, users can simply upload CSV files and ask questions in plain English. The system intelligently converts these queries into SQL, executes them against a structured database, generates insightful visualizations, and provides AI-driven business reports that can be exported as PDFs.",
-    "image": "https://res.cloudinary.com/dbv0toshr/image/upload/v1774079548/AutoCareerAI_vy5wmt.png",
+    "image": "https://res.cloudinary.com/dbv0toshr/image/upload/v1774079548/DataIntel_poi22t.png",
     "url": "http://data-intel.vercel.app/",
     "category": "AI & Data Science"
   },

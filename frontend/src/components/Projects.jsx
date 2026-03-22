@@ -21,9 +21,9 @@ export default function Projects() {
       <div className="max-w-7xl mx-auto px-5 md:px-12 w-full relative z-10">
         <div className="mb-12 md:mb-24">
           <h2 className="text-white text-3xl md:text-4xl font-display font-bold tracking-widest border-b border-white/10 pb-4 inline-block mb-4 md:mb-6 uppercase">
-            Featured <span className="silver-text">Projects</span>
+            What I’ve  <span className="silver-text">Built</span>
           </h2>
-          <p className="text-silver-muted text-xs tracking-[0.5em] uppercase font-bold pl-1">Selected Work &amp; Innovations</p>
+          <p className="text-silver-muted text-xs tracking-[0.5em] uppercase font-bold pl-1">Built, Tested & Deployed</p>
         </div>
 
         {/* Single column on mobile, 2 columns on md+ */}

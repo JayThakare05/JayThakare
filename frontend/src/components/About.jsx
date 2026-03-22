@@ -2,9 +2,7 @@ import { motion } from "framer-motion";
 
 export default function About() {
   const stats = [
-    { label: "Experience", value: "1 Years" },
     { label: "Projects", value: "3+ Done" },
-    { label: "Tech Stack", value: "Modern" },
     { label: "AI Focus", value: "GenAI/ML" },
   ];
 
@@ -76,7 +74,7 @@ export default function About() {
 
           <motion.div
             variants={itemVariants}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mt-10 md:mt-16 pt-6 md:pt-8 border-t border-white/5"
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mt-10 md:mt-16 pt-6 md:pt-8 border-t border-white/5 items-center"
           >
             {stats.map((stat, index) => (
               <div key={index} className="group cursor-default">
@@ -88,6 +86,16 @@ export default function About() {
                 </p>
               </div>
             ))}
+
+            <div className="col-span-2 md:col-span-2 flex justify-start md:justify-end mt-4 md:mt-0">
+              <a
+                href="/resume/RESUME.pdf"
+                download="Jay_Thakare_Resume.pdf"
+                className="px-10 py-4 bg-silver-base rounded-[1.5rem] text-black font-display font-black text-[12px] tracking-[0.3em] uppercase transition-all duration-300 hover:bg-white hover:scale-105 shadow-xl text-center block w-full sm:w-auto"
+              >
+                GET RESUME
+              </a>
+            </div>
           </motion.div>
         </motion.div>
 

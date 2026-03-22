@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaGraduationCap, FaCertificate, FaTerminal, FaCode, FaExternalLinkAlt, FaPlus } from "react-icons/fa";
+import { FaGraduationCap, FaCertificate, FaTerminal, FaCode, FaExternalLinkAlt, FaPlus, FaTimes } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 import achievementData from "../data/achievements.json";
 
@@ -13,7 +13,7 @@ const iconMap = {
   leetcode: SiLeetcode
 };
 
-const AchievementCard = ({ iconName, title, subtitle, details, date, category, highlight, url }) => {
+const AchievementCard = ({ iconName, title, subtitle, details, date, category, highlight, url, onPreview }) => {
   const [isHovered, setIsHovered] = useState(false);
   const Icon = iconMap[iconName] || FaCertificate;
 
@@ -27,7 +27,7 @@ const AchievementCard = ({ iconName, title, subtitle, details, date, category, h
     <motion.div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      onClick={() => url && window.open(url, "_blank")}
+      onClick={() => url && onPreview(url, title)}
       whileHover={{ y: -8 }}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -151,7 +151,19 @@ const AchievementCard = ({ iconName, title, subtitle, details, date, category, h
 
 export default function Achievements() {
   const [visibleCount, setVisibleCount] = useState(5);
+  const [selectedDoc, setSelectedDoc] = useState(null);
   
+  const handlePreview = (url, title) => {
+    const isPdf = url && url.toLowerCase().endsWith('.pdf');
+    const isImage = url && (url.toLowerCase().endsWith('.jpg') || url.toLowerCase().endsWith('.jpeg') || url.toLowerCase().endsWith('.png') || url.toLowerCase().endsWith('.webp'));
+    
+    if (isPdf || isImage) {
+      setSelectedDoc({ url, title, isPdf, isImage });
+    } else {
+      window.open(url, "_blank");
+    }
+  };
+
   const handleSeeMore = () => {
     setVisibleCount(prev => prev + 5);
   };
@@ -177,13 +189,18 @@ export default function Achievements() {
              <span className="silver-text">Achievements</span>
           </h2>
           <p className="text-silver-muted text-xs tracking-[0.5em] uppercase font-bold pl-1">
-            Academic Excellence & Global Certifications
+            Technical Foundations & Certifications
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {currentAchievements.map((achievement, index) => (
-            <AchievementCard key={achievement.id} iconName={achievement.icon} {...achievement} />
+            <AchievementCard 
+              key={achievement.id} 
+              iconName={achievement.icon} 
+              {...achievement} 
+              onPreview={handlePreview}
+            />
           ))}
 
           {/* See More Option as the 6th Slot (or next available slot) */}
@@ -212,6 +229,58 @@ export default function Achievements() {
           )}
         </div>
       </div>
+
+      {/* DOCUMENT PREVIEW MODAL */}
+      <AnimatePresence>
+        {selectedDoc && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 md:p-8"
+            onClick={() => setSelectedDoc(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="relative w-full max-w-5xl h-[80vh] md:h-[90vh] bg-[#0a0a0a] border border-white/10 rounded-2xl overflow-hidden shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Header */}
+              <div className="absolute top-0 left-0 right-0 p-4 md:p-6 bg-gradient-to-b from-black/80 to-transparent z-10 flex items-center justify-between">
+                <div>
+                  <h3 className="text-white text-lg md:text-xl font-display font-bold uppercase tracking-widest">{selectedDoc.title}</h3>
+                  <p className="text-silver-muted text-[10px] tracking-[0.4em] uppercase font-bold mt-1">Certificate Preview</p>
+                </div>
+                <button
+                  onClick={() => setSelectedDoc(null)}
+                  className="p-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-white transition-all duration-300 hover:scale-110 active:scale-95 group"
+                >
+                  <FaTimes className="text-lg group-hover:rotate-90 transition-transform duration-300" />
+                </button>
+              </div>
+
+              {/* Content */}
+              <div className="w-full h-full pt-20 pb-4 px-4 overflow-auto flex items-center justify-center">
+                {selectedDoc.isPdf ? (
+                  <iframe
+                    src={`${selectedDoc.url}#toolbar=0`}
+                    className="w-full h-full border-none rounded-lg"
+                    title={selectedDoc.title}
+                  />
+                ) : (
+                  <img
+                    src={selectedDoc.url}
+                    alt={selectedDoc.title}
+                    className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+                  />
+                )}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

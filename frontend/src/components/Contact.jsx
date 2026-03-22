@@ -237,9 +237,9 @@ export default function Contact() {
             </div>
 
             <motion.a
-              href="https://res.cloudinary.com/dbv0toshr/image/upload/v1774079066/RESUME_occzbm.pdf"
+              href="/resume/RESUME.pdf"
               target="_blank"
-              download="https://res.cloudinary.com/dbv0toshr/image/upload/v1774079066/RESUME_occzbm.pdf"
+              download="Jay_Thakare_Resume.pdf"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 md:px-10 py-4 md:py-5 bg-silver-base rounded-2xl text-black font-display font-black text-[11px] tracking-[0.3em] uppercase shadow-[0_0_30px_rgba(192,192,192,0.2)] hover:shadow-[0_0_50px_rgba(192,192,192,0.4)] transition-all duration-500 relative z-10 block whitespace-nowrap"

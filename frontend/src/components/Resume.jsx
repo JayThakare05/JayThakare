@@ -65,8 +65,7 @@ export default function Resume() {
       title: "Problem Solving",
       skills: [
         { name: "Data Structures", icon: <FaLayerGroup className="text-silver-base" /> },
-        { name: "Algorithms", icon: <FaCogs className="text-silver-muted" /> },
-        { name: "C++ Solving", icon: <SiCplusplus className="text-[#00599C]" /> }
+        { name: "Algorithms", icon: <FaCogs className="text-silver-muted" /> }
       ]
     }
   ];
@@ -85,7 +84,7 @@ export default function Resume() {
           <h2 className="text-white text-3xl md:text-4xl font-display font-bold tracking-widest border-b border-white/10 pb-4 inline-block mb-4 md:mb-6 uppercase">
             Tech <span className="silver-text italic">Stack</span>
           </h2>
-          <p className="text-silver-muted text-xs tracking-[0.5em] uppercase font-bold pl-1">Engineering Excellence</p>
+          <p className="text-silver-muted text-xs tracking-[0.5em] uppercase font-bold pl-1">Code, Data & Intelligence</p>
         </div>
 
         {/* Primary Categories — 1 col on mobile, 3 on desktop */}

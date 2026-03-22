@@ -82,10 +82,6 @@ function MobileTimelineCard({ stage, index, isLast }) {
       {/* Right: content card */}
       <div className="pb-8 flex-1">
         <div className="bg-neutral-900/50 border border-white/8 rounded-2xl p-4 hover:border-silver-base/30 transition-all duration-400 hover:bg-neutral-900/80 shadow-xl">
-          {/* Step number badge */}
-          <span className="text-[8px] tracking-[0.3em] uppercase font-black text-silver-base/50 mb-2 block">
-            Step {String(index + 1).padStart(2, "0")}
-          </span>
           <h3 className="text-white text-sm font-display font-bold uppercase tracking-wide mb-1 leading-tight">
             {stage.title}
           </h3>
@@ -165,8 +161,8 @@ export default function TechEvolution() {
           <div className="w-16 md:w-24 h-1 bg-silver-base"></div>
         </motion.div>
 
-        {/* ── MOBILE: vertical timeline ── */}
-        <div className="md:hidden mb-12">
+        {/* ── MOBILE: vertical timeline ── (Used for Mobile & Tablet) */}
+        <div className="xl:hidden mb-12">
           {evolutionStages.map((stage, index) => (
             <MobileTimelineCard
               key={index}
@@ -177,8 +173,8 @@ export default function TechEvolution() {
           ))}
         </div>
 
-        {/* ── DESKTOP: horizontal alternating timeline ── */}
-        <div className="hidden md:block">
+        {/* ── DESKTOP: horizontal alternating timeline ── (Used for Large Desktop) */}
+        <div className="hidden xl:block">
           <motion.div
             className="relative mb-40"
             initial="hidden"
