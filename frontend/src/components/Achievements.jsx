@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaGraduationCap, FaCertificate, FaTerminal, FaCode, FaExternalLinkAlt, FaPlus, FaTimes } from "react-icons/fa";
+import { FaGraduationCap, FaCertificate, FaTerminal, FaCode, FaExternalLinkAlt, FaPlus, FaTimes, FaTrophy } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 import achievementData from "../data/achievements.json";
 
@@ -10,29 +10,30 @@ const iconMap = {
   certificate: FaCertificate,
   terminal: FaTerminal,
   code: FaCode,
-  leetcode: SiLeetcode
+  leetcode: SiLeetcode,
+  winner: FaTrophy
 };
 
-const AchievementCard = ({ iconName, title, subtitle, details, date, category, highlight, url, onPreview }) => {
+const AchievementCard = ({ iconName, title, subtitle, details, date, category, highlight, imageUrl, clickUrl, onPreview }) => {
   const [isHovered, setIsHovered] = useState(false);
   const Icon = iconMap[iconName] || FaCertificate;
 
-  // Detect if the URL is a PDF or an Image
-  const isPdf = url && url.toLowerCase().endsWith('.pdf');
-  const isImage = url && (url.toLowerCase().endsWith('.jpg') || url.toLowerCase().endsWith('.jpeg') || url.toLowerCase().endsWith('.png') || url.toLowerCase().endsWith('.webp'));
-  
-  const previewUrl = isPdf ? `${url}#toolbar=0&navpanes=0&scrollbar=0` : null;
+  // Detect type based on imageUrl (for card display) and clickUrl (for navigation)
+  const isPdf = imageUrl && imageUrl.toLowerCase().endsWith('.pdf');
+  const isImage = imageUrl && (imageUrl.toLowerCase().endsWith('.jpg') || imageUrl.toLowerCase().endsWith('.jpeg') || imageUrl.toLowerCase().endsWith('.png') || imageUrl.toLowerCase().endsWith('.webp'));
+
+  const previewUrl = isPdf ? `${imageUrl}#toolbar=0&navpanes=0&scrollbar=0` : null;
 
   return (
     <motion.div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      onClick={() => url && onPreview(url, title)}
+      onClick={() => clickUrl && onPreview(clickUrl, title)}
       whileHover={{ y: -8 }}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className={`group relative bg-[#0a0a0a]/80 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden transition-all duration-500 hover:border-silver-base/30 shadow-2xl flex flex-col h-[420px] ${url ? 'cursor-pointer' : ''}`}
+      className={`group relative bg-[#0a0a0a]/80 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden transition-all duration-500 hover:border-silver-base/30 shadow-2xl flex flex-col h-[420px] ${clickUrl ? 'cursor-pointer' : ''}`}
     >
       {/* Background Glow Effect */}
       <div className="absolute top-0 right-0 w-32 h-32 bg-silver-base/5 rounded-full blur-3xl group-hover:bg-silver-base/10 transition-colors duration-500"></div>
@@ -48,12 +49,13 @@ const AchievementCard = ({ iconName, title, subtitle, details, date, category, h
               title={title}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+
           </div>
         ) : isImage ? (
           <div className="relative aspect-[16/10] overflow-hidden border-b border-white/10 bg-neutral-900">
             {/* Image Preview */}
             <img
-              src={url}
+              src={imageUrl}
               alt={title}
               className={`w-full h-full object-cover transition-all duration-700 ${isHovered ? 'opacity-30 blur-[1px] scale-105' : 'opacity-100'}`}
             />
@@ -153,14 +155,14 @@ export default function Achievements() {
   const [visibleCount, setVisibleCount] = useState(5);
   const [selectedDoc, setSelectedDoc] = useState(null);
   
-  const handlePreview = (url, title) => {
-    const isPdf = url && url.toLowerCase().endsWith('.pdf');
-    const isImage = url && (url.toLowerCase().endsWith('.jpg') || url.toLowerCase().endsWith('.jpeg') || url.toLowerCase().endsWith('.png') || url.toLowerCase().endsWith('.webp'));
+  const handlePreview = (clickUrl, title) => {
+    const isPdf = clickUrl && clickUrl.toLowerCase().endsWith('.pdf');
+    const isImage = clickUrl && (clickUrl.toLowerCase().endsWith('.jpg') || clickUrl.toLowerCase().endsWith('.jpeg') || clickUrl.toLowerCase().endsWith('.png') || clickUrl.toLowerCase().endsWith('.webp'));
     
     if (isPdf || isImage) {
-      setSelectedDoc({ url, title, isPdf, isImage });
+      setSelectedDoc({ url: clickUrl, title, isPdf, isImage });
     } else {
-      window.open(url, "_blank");
+      window.open(clickUrl, "_blank");
     }
   };
 

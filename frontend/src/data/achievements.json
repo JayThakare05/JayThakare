@@ -13,10 +13,26 @@
       "Department of Computer Engineering"
     ],
     "date": "2023 - PRESENT",
-    "url": null
+    "imageUrl": null,
+    "clickUrl": null
   },
   {
     "id": 2,
+    "icon": "winner",
+    "category": "Hackathon",
+    "title": "First Runner-Up",
+    "subtitle": "Nakshatra-National Level 24hrs Hackathon",
+    "details": [
+      "Of our college A. P. Shah Institute of Technology",
+      "With my Team Status 200",
+      "Have worked on Fintech Project named (ChitX)"
+    ],
+    "date": "2024",
+    "imageUrl": "nakshatra.jpeg",
+    "clickUrl": "https://www.linkedin.com/posts/jay-thakare05_hackathon-nakshatra-fintech-ugcPost-7450966259287965696-ASMv/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAFCn4JgBsyH2cIISlCvqldrST9stLPElSYU"
+  },
+  {
+    "id": 3,
     "icon": "certificate",
     "category": "Cisco Academy",
     "title": "CCNA: Introduction to Networks",
@@ -27,10 +43,11 @@
       "Routing and Switching Essentials"
     ],
     "date": "2024",
-    "url": "https://res.cloudinary.com/dbv0toshr/image/upload/v1774078334/CCNA-_Introduction_to_Networks_certificate_23106052-apsit-edu-in_58144ee1-f1ee-4f47-ba49-21ffb6e97460_page-0001_v5kuki.jpg"
+    "imageUrl": "https://res.cloudinary.com/dbv0toshr/image/upload/v1774078334/CCNA-_Introduction_to_Networks_certificate_23106052-apsit-edu-in_58144ee1-f1ee-4f47-ba49-21ffb6e97460_page-0001_v5kuki.jpg",
+    "clickUrl": "https://res.cloudinary.com/dbv0toshr/image/upload/v1774078334/CCNA-_Introduction_to_Networks_certificate_23106052-apsit-edu-in_58144ee1-f1ee-4f47-ba49-21ffb6e97460_page-0001_v5kuki.jpg"
   },
   {
-    "id": 3,
+    "id": 4,
     "icon": "certificate",
     "category": "Cisco Academy",
     "title": "Programming Essentials in C",
@@ -41,10 +58,11 @@
       "Memory Management & Pointers"
     ],
     "date": "2024",
-    "url": "https://res.cloudinary.com/dbv0toshr/image/upload/v1774078334/Partner-_CLA_-_Programming_Essentials_in_C_certificate_thakarejay2005-gmail-com_8d251bb4-e650-4bd7-a81c-d64eb07d0993_page-0001_fntroc.jpg"
+    "imageUrl": "https://res.cloudinary.com/dbv0toshr/image/upload/v1774078334/Partner-_CLA_-_Programming_Essentials_in_C_certificate_thakarejay2005-gmail-com_8d251bb4-e650-4bd7-a81c-d64eb07d0993_page-0001_fntroc.jpg",
+    "clickUrl": "https://res.cloudinary.com/dbv0toshr/image/upload/v1774078334/Partner-_CLA_-_Programming_Essentials_in_C_certificate_thakarejay2005-gmail-com_8d251bb4-e650-4bd7-a81c-d64eb07d0993_page-0001_fntroc.jpg"
   },
   {
-    "id": 4,
+    "id": 5,
     "icon": "certificate",
     "category": "Full Stack",
     "title": "Delta - Web Development",
@@ -55,10 +73,11 @@
       "Project-Based Learning Experience"
     ],
     "date": "2024",
-    "url": "https://res.cloudinary.com/dbv0toshr/image/upload/v1774078334/apna_clg_wyxlzh.jpg"
+    "imageUrl": "https://res.cloudinary.com/dbv0toshr/image/upload/v1774078334/apna_clg_wyxlzh.jpg",
+    "clickUrl": "https://res.cloudinary.com/dbv0toshr/image/upload/v1774078334/apna_clg_wyxlzh.jpg"
   },
   {
-    "id": 5,
+    "id": 6,
     "icon": "certificate",
     "category": "Oracle Academy",
     "title": "Database Foundations",
@@ -69,10 +88,11 @@
       "Relational Database Principles"
     ],
     "date": "2024",
-    "url": "https://res.cloudinary.com/dbv0toshr/image/upload/v1774078334/dbms_lgsaft.jpg"
+    "imageUrl": "https://res.cloudinary.com/dbv0toshr/image/upload/v1774078334/dbms_lgsaft.jpg",
+    "clickUrl": "https://res.cloudinary.com/dbv0toshr/image/upload/v1774078334/dbms_lgsaft.jpg"
   },
   {
-    "id": 6,
+    "id": 7,
     "icon": "leetcode",
     "category": "Competitive",
     "title": "LeetCode Problem Solver",
@@ -83,6 +103,7 @@
       "Daily Problem Solving Grit"
     ],
     "date": "Active",
-    "url": "https://leetcode.com/u/Jay_Thakare/"
+    "imageUrl": null,
+    "clickUrl": "https://leetcode.com/u/Jay_Thakare/"
   }
 ]
