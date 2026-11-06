@@ -40,7 +40,8 @@ export default function Resume() {
         { name: "ML Models", icon: <FaBrain className="text-[#FF6F61]" /> },
         { name: "AI Agents", icon: <FaRobot className="text-silver-base" /> },
         { name: "GenAI Apps", icon: <SiLangchain className="text-[#13B67A]" /> },
-        { name: "NLP", icon: <FaTerminal className="text-silver-muted" /> }
+        { name: "NLP", icon: <FaTerminal className="text-silver-muted" /> },
+        { name: "DL Models", icon: <FaBrain className="text-[#FF6F61]" /> }
       ]
     }
   ];
@@ -75,15 +76,16 @@ export default function Resume() {
   ];
 
   return (
-    <section id="resume" className="py-20 md:py-32 bg-black relative overflow-hidden">
+    <section id="resume" className="py-20 md:py-32 bg-[#050505] relative overflow-hidden">
       {/* Subtle Background Mark */}
-      <div className="absolute -top-24 -right-24 w-96 h-96 bg-silver-base/5 rounded-full blur-[100px] pointer-events-none"></div>
+      <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#0A2472]/10 rounded-full blur-[100px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-5 md:px-12 w-full relative z-10">
         <div className="mb-12 md:mb-24">
-          <h2 className="text-white text-3xl md:text-4xl font-display font-bold tracking-widest border-b border-white/10 pb-4 inline-block mb-4 md:mb-6 uppercase">
+          <h2 className="text-white text-3xl md:text-4xl font-display font-bold tracking-widest uppercase mb-3">
             Tech <span className="silver-text italic">Stack</span>
           </h2>
+          <div className="w-16 md:w-20 h-1 bg-gradient-to-r from-[#0A2472] to-[#1A53C0] shadow-[0_0_8px_#1A53C0] rounded-full mb-4"></div>
           <p className="text-silver-muted text-xs tracking-[0.5em] uppercase font-bold pl-1">Code, Data & Intelligence</p>
         </div>
 
@@ -91,7 +93,7 @@ export default function Resume() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-24 mb-16 md:mb-32">
           {primarySkills.map((category, idx) => (
             <div key={idx} className="group">
-              <h3 className="text-white text-[11px] tracking-[0.4em] font-bold uppercase mb-8 md:mb-12 border-b border-white/10 pb-2 inline-block group-hover:border-silver-base transition-all duration-500">
+              <h3 className="text-white text-[11px] tracking-[0.4em] font-bold uppercase mb-8 md:mb-12 border-b border-white/10 pb-2 inline-block group-hover:border-[#1A53C0] transition-all duration-500">
                 {category.title}
               </h3>
               <div className="space-y-6 md:space-y-8">
@@ -99,15 +101,21 @@ export default function Resume() {
                   <motion.div
                     key={index}
                     whileHover={{ x: 10 }}
-                    className="flex items-center gap-5 group/item"
+                    className="flex items-center justify-between group/item py-1"
                   >
-                    {/* Mobile/Tablet: full color. Desktop: grayscale → color on hover */}
-                    <div className="text-2xl lg:filter lg:grayscale lg:opacity-40 lg:group-hover/item:opacity-100 lg:group-hover/item:grayscale-0 transition-all duration-500">
-                      {skill.icon}
+                    <div className="flex items-center gap-5">
+                      {/* Mobile/Tablet: full color. Desktop: grayscale → color on hover */}
+                      <div className="text-2xl lg:filter lg:grayscale lg:opacity-40 lg:group-hover/item:opacity-100 lg:group-hover/item:grayscale-0 transition-all duration-500">
+                        {skill.icon}
+                      </div>
+                      <span className="text-silver-muted text-[12px] tracking-[0.1em] uppercase group-hover/item:text-white transition-colors">
+                        {skill.name}
+                      </span>
                     </div>
-                    <span className="text-silver-muted text-[12px] tracking-[0.1em] uppercase group-hover/item:text-white transition-colors">
-                      {skill.name}
-                    </span>
+                    {/* Blue progress / proficiency indicator */}
+                    <div className="w-12 h-[2px] rounded-full bg-white/5 overflow-hidden ml-4">
+                      <div className="h-full w-full bg-gradient-to-r from-[#0A2472] to-[#1A53C0] shadow-[0_0_6px_#1A53C0] opacity-30 group-hover/item:opacity-100 transition-opacity duration-300"></div>
+                    </div>
                   </motion.div>
                 ))}
               </div>
@@ -123,7 +131,7 @@ export default function Resume() {
             transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
           >
             {[...marqueeSkills, ...marqueeSkills].map((skill, i) => (
-              <span key={i} className="text-silver-muted/20 text-4xl md:text-7xl font-display font-black uppercase hover:text-silver-base transition-all duration-700 cursor-default px-4">
+              <span key={i} className="text-silver-muted/20 text-4xl md:text-7xl font-display font-black uppercase hover:text-[#2264E5] hover:drop-shadow-[0_0_15px_rgba(26,83,192,0.5)] transition-all duration-700 cursor-default px-4">
                 {skill}
               </span>
             ))}
@@ -134,7 +142,7 @@ export default function Resume() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-24">
           {secondarySkills.map((category, idx) => (
             <div key={idx} className="group">
-              <h3 className="text-white text-[11px] tracking-[0.4em] font-bold uppercase mb-8 md:mb-12 border-b border-white/10 pb-2 inline-block group-hover:border-silver-base transition-all duration-500">
+              <h3 className="text-white text-[11px] tracking-[0.4em] font-bold uppercase mb-8 md:mb-12 border-b border-white/10 pb-2 inline-block group-hover:border-[#1A53C0] transition-all duration-500">
                 {category.title}
               </h3>
               <div className="space-y-6">
@@ -142,15 +150,21 @@ export default function Resume() {
                   <motion.div
                     key={index}
                     whileHover={{ x: 5 }}
-                    className="flex items-center gap-4 group/item"
+                    className="flex items-center justify-between group/item py-1"
                   >
-                    {/* Mobile/Tablet: full color. Desktop: grayscale → color on hover */}
-                    <div className="text-xl lg:opacity-20 lg:filter lg:grayscale lg:group-hover/item:opacity-80 lg:group-hover/item:grayscale-0 transition-all duration-500">
-                      {skill.icon}
+                    <div className="flex items-center gap-4">
+                      {/* Mobile/Tablet: full color. Desktop: grayscale → color on hover */}
+                      <div className="text-xl lg:opacity-20 lg:filter lg:grayscale lg:group-hover/item:opacity-80 lg:group-hover/item:grayscale-0 transition-all duration-500">
+                        {skill.icon}
+                      </div>
+                      <span className="text-silver-muted text-[12px] tracking-[0.1em] uppercase font-display group-hover/item:text-white transition-colors cursor-default">
+                        {skill.name}
+                      </span>
                     </div>
-                    <span className="text-silver-muted text-[12px] tracking-[0.1em] uppercase font-display group-hover/item:text-white transition-colors cursor-default">
-                      {skill.name}
-                    </span>
+                    {/* Blue progress / proficiency indicator */}
+                    <div className="w-12 h-[2px] rounded-full bg-white/5 overflow-hidden ml-4">
+                      <div className="h-full w-full bg-gradient-to-r from-[#0A2472] to-[#1A53C0] shadow-[0_0_6px_#1A53C0] opacity-30 group-hover/item:opacity-100 transition-opacity duration-300"></div>
+                    </div>
                   </motion.div>
                 ))}
               </div>

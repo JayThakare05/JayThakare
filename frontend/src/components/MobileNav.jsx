@@ -63,7 +63,7 @@ export default function MobileNav() {
               <span
                 className={`transition-all duration-200 ${
                   isActive
-                    ? "text-silver-base text-xl scale-110"
+                    ? "text-[#1A53C0] text-xl scale-110 drop-shadow-[0_0_8px_#1A53C0]"
                     : "text-base scale-100"
                 }`}
               >
@@ -73,7 +73,7 @@ export default function MobileNav() {
               {/* Label */}
               <span
                 className={`text-[8px] tracking-widest uppercase transition-all duration-200 ${
-                  isActive ? "font-black text-silver-base" : "font-medium"
+                  isActive ? "font-black text-white" : "font-medium"
                 }`}
               >
                 {item.label}
@@ -81,7 +81,7 @@ export default function MobileNav() {
 
               {/* Active dot */}
               {isActive && (
-                <span className="w-1 h-1 rounded-full bg-silver-base shadow-[0_0_6px_rgba(192,192,192,0.9)] mt-0.5" />
+                <span className="w-1 h-1 rounded-full bg-[#1A53C0] shadow-[0_0_8px_#1A53C0] mt-0.5" />
               )}
             </a>
           );

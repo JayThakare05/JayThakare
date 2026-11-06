@@ -26,7 +26,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="bg-black relative py-20 md:py-32 overflow-hidden"
+      className="bg-[#050505] relative py-20 md:py-32 overflow-hidden"
     >
       {/* Decorative background text — hidden on small screens so it doesn't spill */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 -rotate-90 select-none pointer-events-none opacity-[0.02] transform origin-left hidden md:block">
@@ -43,12 +43,15 @@ export default function About() {
            viewport={{ once: true, margin: "-100px" }}
            className="order-2 lg:order-1"
         >
-          <motion.h2
-            variants={itemVariants}
-            className="text-white text-2xl md:text-4xl font-display font-bold tracking-widest border-b border-white/10 pb-2 inline-block mb-8 md:mb-12"
-          >
-            ABOUT ME
-          </motion.h2>
+          <div className="mb-8 md:mb-12 inline-block">
+            <motion.h2
+              variants={itemVariants}
+              className="text-white text-2xl md:text-4xl font-display font-bold tracking-widest uppercase block"
+            >
+              ABOUT ME
+            </motion.h2>
+            <div className="w-12 md:w-16 h-1 bg-gradient-to-r from-[#0A2472] to-[#1A53C0] shadow-[0_0_8px_#1A53C0] rounded-full mt-3"></div>
+          </div>
 
           <div className="space-y-6 md:space-y-8">
             <motion.p
@@ -91,6 +94,8 @@ export default function About() {
             <div className="w-full sm:w-auto flex justify-center lg:justify-end">
               <a
                 href="/resume/RESUME.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 download="Jay_Thakare_Resume.pdf"
                 className="px-8 md:px-10 py-4 bg-silver-base rounded-[1.5rem] text-black font-display font-black text-[12px] tracking-[0.3em] uppercase transition-all duration-300 hover:bg-white hover:scale-105 shadow-xl text-center block"
               >
@@ -108,9 +113,9 @@ export default function About() {
           transition={{ duration: 1 }}
           className="order-1 lg:order-2 relative group max-w-sm mx-auto w-full lg:max-w-none"
         >
-          {/* Abstract corner markers */}
-          <div className="absolute top-0 left-0 w-10 h-10 md:w-12 md:h-12 border-l border-t border-white/20 -mt-3 -ml-3 group-hover:border-white/50 transition-all duration-500"></div>
-          <div className="absolute bottom-0 right-0 w-10 h-10 md:w-12 md:h-12 border-r border-b border-white/20 -mb-3 -mr-3 group-hover:border-white/50 transition-all duration-500"></div>
+          {/* Abstract corner markers with sapphire blue hover */}
+          <div className="absolute top-0 left-0 w-10 h-10 md:w-12 md:h-12 border-l border-t border-white/20 -mt-3 -ml-3 group-hover:border-[#1A53C0]/70 transition-all duration-500"></div>
+          <div className="absolute bottom-0 right-0 w-10 h-10 md:w-12 md:h-12 border-r border-b border-white/20 -mb-3 -mr-3 group-hover:border-[#1A53C0]/70 transition-all duration-500"></div>
 
           <motion.div 
             initial={{ filter: "grayscale(100%)", brightness: 0.9 }}

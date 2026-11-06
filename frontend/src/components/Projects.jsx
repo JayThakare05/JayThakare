@@ -7,7 +7,7 @@ export default function Projects() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <section id="projects" className="py-20 md:py-32 bg-black relative overflow-hidden">
+    <section id="projects" className="py-20 md:py-32 bg-[#050505] relative overflow-hidden">
       {/* Background Decorative Text — desktop only to prevent overflow */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 -rotate-90 select-none pointer-events-none opacity-[0.02] transform origin-left hidden md:block">
         <span className="text-[20rem] font-display font-black text-white whitespace-nowrap">
@@ -16,13 +16,14 @@ export default function Projects() {
       </div>
 
       {/* Background Glow */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-silver-base/5 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#1A53C0]/5 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-5 md:px-12 w-full relative z-10">
         <div className="mb-12 md:mb-24">
-          <h2 className="text-white text-3xl md:text-4xl font-display font-bold tracking-widest border-b border-white/10 pb-4 inline-block mb-4 md:mb-6 uppercase">
+          <h2 className="text-white text-3xl md:text-4xl font-display font-bold tracking-widest uppercase mb-3">
             What I’ve  <span className="silver-text">Built</span>
           </h2>
+          <div className="w-16 md:w-20 h-1 bg-gradient-to-r from-[#0A2472] to-[#1A53C0] shadow-[0_0_8px_#1A53C0] rounded-full mb-4"></div>
           <p className="text-silver-muted text-xs tracking-[0.5em] uppercase font-bold pl-1">Built, Tested & Deployed</p>
         </div>
 
@@ -36,8 +37,8 @@ export default function Projects() {
               onClick={() => window.open(project.url, "_blank")}
               className="group cursor-pointer relative flex flex-col"
             >
-              {/* Image Container */}
-              <div className="relative aspect-[16/9] overflow-hidden rounded-sm border border-white/10 mb-6 md:mb-10 bg-neutral-900 shadow-2xl">
+              {/* Image Container with Cobalt Blue Border on Hover */}
+              <div className="relative aspect-[16/9] overflow-hidden rounded-sm border border-white/10 group-hover:border-[#1A53C0]/60 group-hover:shadow-[0_0_30px_rgba(26,83,192,0.25)] transition-all duration-500 mb-6 md:mb-10 bg-neutral-900 shadow-2xl">
                 {/* Mobile/Tablet: always full color */}
                 <img
                   src={project.image}
@@ -62,14 +63,14 @@ export default function Projects() {
                   animate={{ opacity: hoveredIndex === index ? 1 : 0 }}
                   className="absolute top-4 right-4 lg:top-6 lg:right-6 hidden lg:block"
                 >
-                  <div className="bg-black/60 backdrop-blur-md p-3 rounded-full border border-white/20">
+                  <div className="bg-[#0A2472] backdrop-blur-md p-3 rounded-full border border-[#1A53C0] shadow-[0_0_15px_rgba(26,83,192,0.6)]">
                     <FaExternalLinkAlt className="text-white text-sm" />
                   </div>
                 </motion.div>
 
                 {/* Mobile/Tablet: always-visible link icon */}
                 <div className="absolute top-4 right-4 lg:hidden">
-                  <div className="bg-black/50 backdrop-blur-md p-2.5 rounded-full border border-white/20">
+                  <div className="bg-black/60 backdrop-blur-md p-2.5 rounded-full border border-white/20">
                     <FaExternalLinkAlt className="text-white text-xs" />
                   </div>
                 </div>
@@ -79,10 +80,10 @@ export default function Projects() {
               {/* Content Section */}
               <div className="flex-1">
                 <div className="flex items-center gap-4 mb-3 md:mb-4">
-                  <p className="text-silver-muted text-[11px] tracking-[0.4em] uppercase font-bold">
+                  <p className="text-silver-muted text-[11px] tracking-[0.4em] uppercase font-bold group-hover:text-[#1A53C0] transition-colors">
                     {project.category}
                   </p>
-                  <div className={`h-[1px] flex-1 bg-white/10 ${hoveredIndex === index ? 'bg-silver-base/30' : ''} transition-all duration-700`}></div>
+                  <div className={`h-[1px] flex-1 bg-white/10 ${hoveredIndex === index ? 'bg-[#1A53C0]/40' : ''} transition-all duration-700`}></div>
                 </div>
 
                 <div className="mb-3">
@@ -116,15 +117,15 @@ export default function Projects() {
                   </AnimatePresence>
                 </div>
 
-                <div className={`mt-6 md:mt-8 pt-4 md:pt-6 border-t border-white/5 flex items-center justify-between ${hoveredIndex === index ? 'border-silver-base/30' : ''} transition-colors`}>
+                <div className={`mt-6 md:mt-8 pt-4 md:pt-6 border-t border-white/5 flex items-center justify-between ${hoveredIndex === index ? 'border-[#1A53C0]/30' : ''} transition-colors`}>
                   <div className="flex items-center gap-3 md:gap-4">
-                    <span className={`text-[10px] tracking-[0.4em] uppercase font-bold ${hoveredIndex === index ? 'text-silver-base' : 'text-white/40'} transition-colors`}>See Live Project</span>
+                    <span className={`text-[10px] tracking-[0.4em] uppercase font-bold ${hoveredIndex === index ? 'text-[#1A53C0]' : 'text-white/40'} transition-colors`}>See Live Project</span>
                     <motion.div
                       animate={{ width: hoveredIndex === index ? 80 : 48 }}
-                      className={`h-[1px] ${hoveredIndex === index ? 'bg-silver-base' : 'bg-white/10'} transition-all duration-700`}
+                      className={`h-[1px] ${hoveredIndex === index ? 'bg-[#1A53C0] shadow-[0_0_8px_#1A53C0]' : 'bg-white/10'} transition-all duration-700`}
                     />
                   </div>
-                  <FaExternalLinkAlt className={`${hoveredIndex === index ? 'text-silver-base' : 'text-white/20'} transition-colors`} />
+                  <FaExternalLinkAlt className={`${hoveredIndex === index ? 'text-[#1A53C0]' : 'text-white/20'} transition-colors`} />
                 </div>
               </div>
             </div>

@@ -33,10 +33,13 @@ const AchievementCard = ({ iconName, title, subtitle, details, date, category, h
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className={`group relative bg-[#0a0a0a]/80 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden transition-all duration-500 hover:border-silver-base/30 shadow-2xl flex flex-col h-[420px] ${clickUrl ? 'cursor-pointer' : ''}`}
+      className={`group relative bg-[#0a0a0a]/90 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden transition-all duration-500 hover:border-[#1A53C0]/50 hover:shadow-[0_0_25px_rgba(26,83,192,0.2)] flex flex-col h-[420px] ${clickUrl ? 'cursor-pointer' : ''}`}
     >
+      {/* Blue accent line at top */}
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#1A53C0] to-transparent opacity-40 group-hover:opacity-100 group-hover:shadow-[0_0_10px_#1A53C0] transition-all duration-500 z-30"></div>
+
       {/* Background Glow Effect */}
-      <div className="absolute top-0 right-0 w-32 h-32 bg-silver-base/5 rounded-full blur-3xl group-hover:bg-silver-base/10 transition-colors duration-500"></div>
+      <div className="absolute top-0 right-0 w-32 h-32 bg-[#1A53C0]/5 rounded-full blur-3xl group-hover:bg-[#1A53C0]/15 transition-colors duration-500"></div>
 
       {/* Media/Content Section */}
       <div className="relative h-full flex flex-col overflow-hidden">
@@ -174,7 +177,7 @@ export default function Achievements() {
   const hasMore = achievementData.length > visibleCount;
 
   return (
-    <section id="achievements" className="py-20 md:py-32 bg-black relative overflow-hidden">
+    <section id="achievements" className="py-20 md:py-32 bg-[#050505] relative overflow-hidden">
       {/* Background Decorative Text */}
       <div className="absolute top-1/2 right-0 -translate-y-1/2 rotate-90 select-none pointer-events-none opacity-[0.02] transform origin-right hidden md:block">
         <span className="text-[15rem] font-display font-black text-white whitespace-nowrap">
@@ -183,13 +186,14 @@ export default function Achievements() {
       </div>
 
       {/* Background Glow */}
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-silver-base/5 rounded-full blur-[150px] translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#1A53C0]/5 rounded-full blur-[150px] translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-5 md:px-12 w-full relative z-10">
         <div className="mb-10 md:mb-20 text-center md:text-left">
-          <h2 className="text-white text-2xl md:text-4xl font-display font-bold tracking-widest border-b border-white/10 pb-4 inline-block mb-4 md:mb-6 uppercase">
+          <h2 className="text-white text-2xl md:text-4xl font-display font-bold tracking-widest uppercase mb-3">
              <span className="silver-text">Achievements</span>
           </h2>
+          <div className="w-16 md:w-20 h-1 bg-gradient-to-r from-[#0A2472] to-[#1A53C0] shadow-[0_0_8px_#1A53C0] rounded-full mb-4"></div>
           <p className="text-silver-muted text-xs tracking-[0.5em] uppercase font-bold pl-1">
             Technical Foundations & Certifications
           </p>
@@ -211,14 +215,17 @@ export default function Achievements() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 onClick={handleSeeMore}
-                className="group relative bg-white/[0.02] border border-white/5 rounded-2xl overflow-hidden transition-all duration-500 hover:border-silver-base/30 shadow-xl flex flex-col items-center justify-center h-[420px] cursor-pointer"
+                className="group relative bg-white/[0.02] border border-white/5 rounded-2xl overflow-hidden transition-all duration-500 hover:border-[#1A53C0]/40 hover:shadow-[0_0_25px_rgba(26,83,192,0.2)] flex flex-col items-center justify-center h-[420px] cursor-pointer"
             >
+                {/* Blue accent line at top */}
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#1A53C0] to-transparent opacity-40 group-hover:opacity-100 group-hover:shadow-[0_0_10px_#1A53C0] transition-all duration-500"></div>
+
                 <div className="relative z-10 flex flex-col items-center gap-6">
-                    <div className="p-6 bg-silver-base/10 rounded-full border border-silver-base/20 group-hover:scale-110 group-hover:bg-silver-base/20 transition-all duration-500 shadow-[0_0_30px_rgba(192,192,192,0.1)]">
-                        <FaPlus className="text-4xl text-silver-base animate-pulse" />
+                    <div className="p-6 bg-[#0A2472]/15 rounded-full border border-[#1A53C0]/30 group-hover:scale-110 group-hover:bg-[#0A2472]/30 transition-all duration-500 shadow-[0_0_20px_rgba(26,83,192,0.2)]">
+                        <FaPlus className="text-4xl text-[#1A53C0] animate-pulse" />
                     </div>
                     <div className="text-center">
-                        <h3 className="text-2xl font-display font-bold text-white uppercase tracking-widest mb-2 group-hover:silver-text transition-colors">See More</h3>
+                        <h3 className="text-2xl font-display font-bold text-white uppercase tracking-widest mb-2 group-hover:text-white transition-colors">See More</h3>
                         <p className="text-silver-muted text-[10px] tracking-[0.3em] uppercase font-bold">Discover More Milestones</p>
                     </div>
                 </div>

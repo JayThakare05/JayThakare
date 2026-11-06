@@ -7,9 +7,16 @@ export default {
     extend: {
       colors: {
         obsidian: {
-          DEFAULT: "#000000",
+          DEFAULT: "#050505",
           light: "#0A0A0A",
           lighter: "#111111",
+        },
+        cobalt: {
+          DEFAULT: "#0A2472",
+          electric: "#1A53C0",
+          light: "#2264E5",
+          dark: "#05133D",
+          navy: "#0A2472",
         },
         "silver-light": "#E5E5E5",
         "silver-base": "#C0C0C0",
@@ -31,7 +38,12 @@ export default {
       },
       backgroundImage: {
         'glass-gradient': 'linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%)',
+        'cobalt-gradient': 'linear-gradient(135deg, #0A2472 0%, #1A53C0 100%)',
       },
+      boxShadow: {
+        'cobalt-glow': '0 0 20px rgba(26, 83, 192, 0.5)',
+        'cobalt-glow-lg': '0 0 35px rgba(26, 83, 192, 0.75)',
+      }
     },
   },
   plugins: [],

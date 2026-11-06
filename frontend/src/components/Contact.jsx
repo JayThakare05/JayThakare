@@ -46,15 +46,15 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-40 bg-black relative overflow-hidden">
+    <section id="contact" className="py-20 md:py-40 bg-[#050505] relative overflow-hidden">
 
       {/* Decorative Glows */}
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-silver-base/5 rounded-full blur-[150px] translate-y-[-20%] translate-x-[20%] pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-silver-base/5 rounded-full blur-[120px] translate-y-[20%] translate-x-[-20%] pointer-events-none"></div>
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#1A53C0]/5 rounded-full blur-[150px] translate-y-[-20%] translate-x-[20%] pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[#1A53C0]/5 rounded-full blur-[120px] translate-y-[20%] translate-x-[-20%] pointer-events-none"></div>
 
       <div className="max-w-6xl mx-auto px-5 md:px-12 w-full relative z-20">
 
-        {/* Section Header */}
+        {/* Section Header with Cobalt Blue Underline */}
         <div className="mb-12 md:mb-24 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -62,9 +62,10 @@ export default function Contact() {
             viewport={{ once: true }}
             className="inline-block"
           >
-            <h2 className="text-white text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-normal md:tracking-wide border-b border-white/10 pb-4 md:pb-8 mb-4 md:mb-6 uppercase w-full text-center">
+            <h2 className="text-white text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-normal md:tracking-wide uppercase w-full text-center mb-3">
               Get In <span className="silver-text italic">Touch</span>
             </h2>
+            <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-[#0A2472] to-[#1A53C0] shadow-[0_0_8px_#1A53C0] rounded-full mx-auto mb-4 md:mb-6"></div>
             <p className="text-silver-muted text-[10px] md:text-xs tracking-[0.5em] md:tracking-[0.8em] uppercase font-black opacity-60">
               Let's build something extraordinary together
             </p>
@@ -89,19 +90,24 @@ export default function Contact() {
               </p>
 
               <div className="space-y-4 md:space-y-6">
-                <a href="mailto:thakarejay3103@gmail.com" className="flex items-center gap-4 md:gap-6 group">
-                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-silver-base/50 transition-all duration-300 flex-shrink-0">
-                    <FaEnvelope className="text-lg md:text-xl text-silver-muted group-hover:text-silver-base transition-colors" />
+                {/* Cobalt Blue Email Button Card */}
+                <a
+                  href="mailto:thakarejay3103@gmail.com"
+                  className="flex items-center gap-4 md:gap-6 group p-3 md:p-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-[#1A53C0]/50 hover:bg-[#0A2472]/10 hover:shadow-[0_0_20px_rgba(26,83,192,0.25)] transition-all duration-300"
+                >
+                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-[#0A2472]/20 border border-[#1A53C0]/30 flex items-center justify-center group-hover:border-[#1A53C0] group-hover:bg-[#0A2472]/40 group-hover:shadow-[0_0_15px_rgba(26,83,192,0.5)] transition-all duration-300 flex-shrink-0">
+                    <FaEnvelope className="text-lg md:text-xl text-[#1A53C0] group-hover:scale-110 transition-transform duration-300" />
                   </div>
                   <div className="min-w-0">
-                    <span className="text-silver-muted text-[10px] tracking-[0.2em] uppercase font-black block mb-1 opacity-50">Email Me</span>
+                    <span className="text-[#1A53C0] text-[10px] tracking-[0.2em] uppercase font-black block mb-1">Email Me</span>
                     <span className="text-white text-xs md:text-sm font-bold tracking-wider hover:text-silver-base transition-colors break-all">thakarejay3103@gmail.com</span>
                   </div>
                 </a>
 
-                <div className="flex items-center gap-4 md:gap-6 group cursor-default">
-                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-silver-base/50 transition-all duration-300 flex-shrink-0">
-                    <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                {/* Available Status with Blue Status Dot */}
+                <div className="flex items-center gap-4 md:gap-6 group cursor-default p-3 md:p-4 rounded-2xl bg-white/[0.02] border border-white/5">
+                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0">
+                    <div className="w-2 h-2 rounded-full bg-[#1A53C0] shadow-[0_0_8px_#1A53C0] animate-pulse"></div>
                   </div>
                   <div className="min-w-0">
                     <span className="text-silver-muted text-[10px] tracking-[0.2em] uppercase font-black block mb-1 opacity-50">Current Status</span>
@@ -121,7 +127,7 @@ export default function Contact() {
             className="lg:col-span-7"
           >
             <div className="bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/10 p-6 md:p-10 rounded-[2rem] shadow-2xl relative overflow-hidden group">
-              <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 pointer-events-none mix-blend-overlay"></div>
+              <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-10 pointer-events-none mix-blend-overlay"></div>
 
               <form onSubmit={handleSubmit} className="relative z-10 space-y-6">
                 {/* Name + Contact — stacked on mobile, 2-col on sm+ */}
@@ -139,7 +145,7 @@ export default function Contact() {
                         value={formData.name}
                         onChange={handleChange}
                         placeholder="E.g. Jay Thakare"
-                        className="w-full bg-white/[0.03] border border-white/10 rounded-xl py-3.5 pl-11 pr-4 text-white text-sm font-medium focus:outline-none focus:border-silver-base/50 focus:bg-white/[0.05] transition-all placeholder:text-white/10"
+                        className="w-full bg-white/[0.03] border border-white/10 rounded-xl py-3.5 pl-11 pr-4 text-white text-sm font-medium focus:outline-none focus:border-[#1A53C0] focus:shadow-[0_0_12px_rgba(26,83,192,0.25)] focus:bg-white/[0.05] transition-all placeholder:text-white/10"
                       />
                     </div>
                   </div>
@@ -157,7 +163,7 @@ export default function Contact() {
                         value={formData.contact}
                         onChange={handleChange}
                         placeholder="Email or Phone"
-                        className="w-full bg-white/[0.03] border border-white/10 rounded-xl py-3.5 pl-11 pr-4 text-white text-sm font-medium focus:outline-none focus:border-silver-base/50 focus:bg-white/[0.05] transition-all placeholder:text-white/10"
+                        className="w-full bg-white/[0.03] border border-white/10 rounded-xl py-3.5 pl-11 pr-4 text-white text-sm font-medium focus:outline-none focus:border-[#1A53C0] focus:shadow-[0_0_12px_rgba(26,83,192,0.25)] focus:bg-white/[0.05] transition-all placeholder:text-white/10"
                       />
                     </div>
                   </div>
@@ -175,30 +181,30 @@ export default function Contact() {
                     onChange={handleChange}
                     rows="5"
                     placeholder="Tell me about your project idea..."
-                    className="w-full bg-white/[0.03] border border-white/10 rounded-2xl p-5 text-white text-sm font-medium focus:outline-none focus:border-silver-base/50 focus:bg-white/[0.05] transition-all placeholder:text-white/10 resize-none"
+                    className="w-full bg-white/[0.03] border border-white/10 rounded-2xl p-5 text-white text-sm font-medium focus:outline-none focus:border-[#1A53C0] focus:shadow-[0_0_12px_rgba(26,83,192,0.25)] focus:bg-white/[0.05] transition-all placeholder:text-white/10 resize-none"
                   ></textarea>
                 </div>
 
-                {/* Submit */}
+                {/* Submit — Primary button with solid cobalt blue and subtle glow */}
                 <div className="space-y-3">
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     disabled={isLoading}
                     type="submit"
-                    className="w-full relative group/btn overflow-hidden rounded-xl p-[2px] disabled:opacity-50"
+                    className="w-full relative group/btn overflow-hidden rounded-xl p-[1px] disabled:opacity-50"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-silver-muted via-silver-base to-silver-muted opacity-30 group-hover/btn:opacity-100 transition-opacity"></div>
-                    <div className="relative bg-black rounded-xl py-4 px-6 flex justify-center items-center gap-3 transition-colors group-hover/btn:bg-transparent">
-                      <span className="text-white text-[11px] tracking-[0.35em] uppercase font-black transition-colors group-hover/btn:text-black">
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#0A2472] via-[#1A53C0] to-[#0A2472] opacity-100 transition-opacity"></div>
+                    <div className="relative bg-gradient-to-r from-[#0A2472] to-[#1A53C0] rounded-xl py-4 px-6 flex justify-center items-center gap-3 transition-all shadow-[0_0_20px_rgba(26,83,192,0.45)] group-hover/btn:shadow-[0_0_30px_rgba(26,83,192,0.75)] group-hover/btn:brightness-110">
+                      <span className="text-white text-[11px] tracking-[0.35em] uppercase font-black">
                         {isLoading ? "Sending..." : isSent ? "Message Sent!" : "Send Message"}
                       </span>
                       {!isLoading && !isSent && (
-                        <FaPaperPlane className="text-silver-base text-xs transition-all group-hover/btn:translate-x-2 group-hover/btn:-translate-y-1 group-hover/btn:text-black" />
+                        <FaPaperPlane className="text-white text-xs transition-all group-hover/btn:translate-x-2 group-hover/btn:-translate-y-1" />
                       )}
                       {isSent && (
-                        <div className="w-4 h-4 rounded-full bg-green-500 flex items-center justify-center">
-                          <span className="text-black text-[9px] font-bold">✓</span>
+                        <div className="w-4 h-4 rounded-full bg-white flex items-center justify-center">
+                          <span className="text-[#0A2472] text-[9px] font-bold">✓</span>
                         </div>
                       )}
                     </div>

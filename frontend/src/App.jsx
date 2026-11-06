@@ -86,12 +86,14 @@ const CursorGlow = () => {
           style={{
             width:  isHovering ? "10px" : "6px",
             height: isHovering ? "10px" : "6px",
-            boxShadow: "0 0 8px 2px rgba(220,220,220,0.9)",
+            boxShadow: isHovering
+              ? "0 0 14px 3px rgba(26, 83, 192, 0.9), 0 0 4px #FFFFFF"
+              : "0 0 10px 2px rgba(26, 83, 192, 0.7), 0 0 3px #FFFFFF",
           }}
         />
       </div>
 
-      {/* ── Layer 2: Lagging outer ring with slow spin ── */}
+      {/* ── Layer 2: Lagging outer ring with slow spin & #0A2472 glow ── */}
       <motion.div
         className="pointer-events-none fixed z-[9998]"
         style={{ left: ringX, top: ringY, opacity: isVisible ? 1 : 0 }}
@@ -102,12 +104,12 @@ const CursorGlow = () => {
             position: "absolute",
             width:  isHovering ? "52px" : "36px",
             height: isHovering ? "52px" : "36px",
-            border: "1.5px solid rgba(192,192,192,0.5)",
+            border: "1.5px solid rgba(26, 83, 192, 0.6)",
             borderRadius: "50%",
             transform: "translate(-50%, -50%)",
             transition: "width 0.25s ease, height 0.25s ease",
             animation: "spin-slow 4s linear infinite",
-            boxShadow: "0 0 10px 1px rgba(192,192,192,0.25), inset 0 0 8px rgba(192,192,192,0.1)",
+            boxShadow: "0 0 12px 1px rgba(26, 83, 192, 0.4), inset 0 0 8px rgba(10, 36, 114, 0.25)",
           }}
         />
         {/* Static pulsing halo ring */}
@@ -116,7 +118,7 @@ const CursorGlow = () => {
             position: "absolute",
             width:  isHovering ? "64px" : "46px",
             height: isHovering ? "64px" : "46px",
-            border: "1px solid rgba(192,192,192,0.15)",
+            border: "1px solid rgba(26, 83, 192, 0.25)",
             borderRadius: "50%",
             transform: "translate(-50%, -50%)",
             transition: "width 0.25s ease, height 0.25s ease",
@@ -125,7 +127,7 @@ const CursorGlow = () => {
         />
       </motion.div>
 
-      {/* ── Layer 3: Large soft ambient silver glow ── */}
+      {/* ── Layer 3: Large soft ambient sapphire glow ── */}
       <motion.div
         className="pointer-events-none fixed z-[9997]"
         style={{
@@ -133,11 +135,11 @@ const CursorGlow = () => {
           top:  glowY,
           translateX: "-50%",
           translateY: "-50%",
-          opacity: isVisible ? 0.18 : 0,
+          opacity: isVisible ? 0.22 : 0,
           width:  "400px",
           height: "400px",
           borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(200,200,200,0.3) 0%, rgba(150,150,150,0.08) 50%, transparent 75%)",
+          background: "radial-gradient(circle, rgba(26, 83, 192, 0.3) 0%, rgba(10, 36, 114, 0.12) 50%, transparent 75%)",
           filter: "blur(2px)",
           transition: "opacity 0.4s ease",
         }}
@@ -167,15 +169,15 @@ function App() {
   });
 
   return (
-    <div className="bg-black min-h-screen selection:bg-silver-base selection:text-black">
+    <div className="bg-[#050505] min-h-screen selection:bg-[#0A2472] selection:text-white">
       <CursorGlow />
 
       {/* Mobile bottom nav */}
       <MobileNav />
 
-      {/* Top progress bar */}
+      {/* Top progress bar — Sapphire glowing line */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-silver-base z-[100] origin-left"
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0A2472] via-[#1A53C0] to-[#0A2472] shadow-[0_0_12px_#1A53C0] z-[100] origin-left"
         style={{ scaleX }}
       />
 
